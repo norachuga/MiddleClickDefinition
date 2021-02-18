@@ -1,0 +1,2 @@
+# MiddleClickDefinition
+MiddleClickDefinition Visual Studio extension
