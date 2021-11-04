@@ -1,22 +1,48 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31808.319
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiddleClickDefinition", "MiddleClickDefinition\MiddleClickDefinition.csproj", "{F3D461A7-6A7E-4B94-81F4-E09F2C9D1E90}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MiddleClickDefinition.Shared", "MiddleClickDefinition.Shared\MiddleClickDefinition.Shared.shproj", "{596EAB36-8E7D-42E3-AD24-80B3AD609028}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiddleClickDefinition.VS2022", "MiddleClickDefinition.VS2022\MiddleClickDefinition.VS2022.csproj", "{236D92EC-5282-4BB0-9902-32AD8E4EE9D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiddleClickDefinition.VS2019", "MiddleClickDefinition.VS2019\MiddleClickDefinition.VS2019.csproj", "{64B3E428-B69E-45A9-BAA4-6EF95D68D82D}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		MiddleClickDefinition.Shared\MiddleClickDefinition.Shared.projitems*{236d92ec-5282-4bb0-9902-32ad8e4ee9d1}*SharedItemsImports = 4
+		MiddleClickDefinition.Shared\MiddleClickDefinition.Shared.projitems*{596eab36-8e7d-42e3-ad24-80b3ad609028}*SharedItemsImports = 13
+		MiddleClickDefinition.Shared\MiddleClickDefinition.Shared.projitems*{64b3e428-b69e-45a9-baa4-6ef95d68d82d}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F3D461A7-6A7E-4B94-81F4-E09F2C9D1E90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F3D461A7-6A7E-4B94-81F4-E09F2C9D1E90}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F3D461A7-6A7E-4B94-81F4-E09F2C9D1E90}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F3D461A7-6A7E-4B94-81F4-E09F2C9D1E90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{236D92EC-5282-4BB0-9902-32AD8E4EE9D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{236D92EC-5282-4BB0-9902-32AD8E4EE9D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{236D92EC-5282-4BB0-9902-32AD8E4EE9D1}.Debug|x86.ActiveCfg = Debug|x86
+		{236D92EC-5282-4BB0-9902-32AD8E4EE9D1}.Debug|x86.Build.0 = Debug|x86
+		{236D92EC-5282-4BB0-9902-32AD8E4EE9D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{236D92EC-5282-4BB0-9902-32AD8E4EE9D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{236D92EC-5282-4BB0-9902-32AD8E4EE9D1}.Release|x86.ActiveCfg = Release|x86
+		{236D92EC-5282-4BB0-9902-32AD8E4EE9D1}.Release|x86.Build.0 = Release|x86
+		{64B3E428-B69E-45A9-BAA4-6EF95D68D82D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64B3E428-B69E-45A9-BAA4-6EF95D68D82D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64B3E428-B69E-45A9-BAA4-6EF95D68D82D}.Debug|x86.ActiveCfg = Debug|x86
+		{64B3E428-B69E-45A9-BAA4-6EF95D68D82D}.Debug|x86.Build.0 = Debug|x86
+		{64B3E428-B69E-45A9-BAA4-6EF95D68D82D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64B3E428-B69E-45A9-BAA4-6EF95D68D82D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64B3E428-B69E-45A9-BAA4-6EF95D68D82D}.Release|x86.ActiveCfg = Release|x86
+		{64B3E428-B69E-45A9-BAA4-6EF95D68D82D}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BDE29874-3186-4837-91CE-1B6466AF3C7A}
 	EndGlobalSection
 EndGlobal

@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.Text.Editor;
 using System.Windows.Input;
 
-namespace MiddleClickDefinition
+namespace MiddleClickDefinition.Shared.Keys
 {
     internal sealed class GoToDefKeyProcessor : KeyProcessor
     {
@@ -51,5 +51,4 @@ namespace MiddleClickDefinition
 
 
     }
-
 }

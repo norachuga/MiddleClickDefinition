@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualStudio;
+﻿using MiddleClickDefinition.Shared.Keys;
+using MiddleClickDefinition.Shared.Options;
+using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Text.Classification;
@@ -8,7 +10,7 @@ using System;
 using System.Windows;
 using System.Windows.Input;
 
-namespace MiddleClickDefinition
+namespace MiddleClickDefinition.Shared.Mouse
 {
     internal sealed class GoToDefMouseHandler : MouseProcessorBase
     {
@@ -110,7 +112,7 @@ namespace MiddleClickDefinition
         }
 
         private Point RelativeToView(Point position)
-            => new Point(position.X + _view.ViewportLeft, position.Y + _view.ViewportTop);        
+            => new Point(position.X + _view.ViewportLeft, position.Y + _view.ViewportTop);
 
         private bool IsSignificantElement(Point position)
         {
@@ -139,9 +141,9 @@ namespace MiddleClickDefinition
                 foreach (var classification in _aggregator.GetClassificationSpans(extent.Span))
                 {
                     var name = classification.ClassificationType.Classification.ToLower();
-                    if (name.Contains("identifier") 
-                        || name.Contains("user types") 
-                        || (name.Contains("keyword") 
+                    if (name.Contains("identifier")
+                        || name.Contains("user types")
+                        || (name.Contains("keyword")
                             && IsAppropriateKeyword(classification.Span.GetText())
                             && _view.TextBuffer.ContentType.IsOfType("csharp"))
                         )
@@ -214,10 +216,11 @@ namespace MiddleClickDefinition
 
         private void ExecuteCommand(Guid cmdGroup, uint cmdId)
         {
+            Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
             try
             {
                 _commandTarget.Exec(
-                    ref cmdGroup, 
+                    ref cmdGroup,
                     cmdId,
                     (uint)OLECMDEXECOPT.OLECMDEXECOPT_DODEFAULT,
                     IntPtr.Zero,
@@ -229,5 +232,4 @@ namespace MiddleClickDefinition
             }
         }
     }
-
 }

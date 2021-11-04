@@ -1,4 +1,6 @@
 ﻿using EnvDTE;
+using MiddleClickDefinition.Shared.Keys;
+using MiddleClickDefinition.Shared.Options;
 using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
@@ -8,7 +10,7 @@ using Microsoft.VisualStudio.Text.Operations;
 using Microsoft.VisualStudio.Utilities;
 using System.ComponentModel.Composition;
 
-namespace MiddleClickDefinition
+namespace MiddleClickDefinition.Shared.Mouse
 {
     [Export(typeof(IMouseProcessorProvider))]
     [ContentType("code")]
@@ -48,14 +50,15 @@ namespace MiddleClickDefinition
 
         private IOleCommandTarget GetShellCommandDispatcher(ITextView view)
         {
+            Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
             return _globalServiceProvider.GetService(typeof(SUIHostCommandDispatcher)) as IOleCommandTarget;
         }
 
         private OptionsProcessor GetOptionsProcessor()
         {
+            Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
             DTE env = (DTE)_globalServiceProvider.GetService(typeof(DTE));
             return new OptionsProcessor(env);
         }
     }
-
 }

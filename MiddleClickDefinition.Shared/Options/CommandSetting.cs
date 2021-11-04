@@ -1,4 +1,5 @@
-﻿namespace MiddleClickDefinition
+﻿
+namespace MiddleClickDefinition.Shared.Options
 {
     public enum CommandSetting
     {
