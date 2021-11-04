@@ -4,9 +4,11 @@
         <Identity Id="36a0d3d8-9977-4771-ad4f-36ae7806597b" Version="2.0.0" Language="en-US" Publisher="norachuga" />
         <DisplayName>MiddleClickDefinition 2022</DisplayName>
         <Description xml:space="preserve">Use middleclicks to trigger Go To Definition, Go To Implementation, or Peek Definition.</Description>
+        <MoreInfo>https://github.com/norachuga/MiddleClickDefinition</MoreInfo>
         <Icon>midclickicon.png</Icon>
         <PreviewImage>midclickpreview.png</PreviewImage>
         <Tags>Middle Button, Middle click, Go To Definition, Go To Implementation, Peek Definition, Editor</Tags>
+        <Preview>true</Preview>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
