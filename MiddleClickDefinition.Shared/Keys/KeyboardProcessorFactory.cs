@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.Utilities;
 using System.ComponentModel.Composition;
 
-namespace MiddleClickDefinition
+namespace MiddleClickDefinition.Shared.Keys
 {
     [Export(typeof(IKeyProcessorProvider))]
     [TextViewRole(PredefinedTextViewRoles.Document)]
@@ -18,5 +18,4 @@ namespace MiddleClickDefinition
                 () => new GoToDefKeyProcessor(ModifierKeyStateProcessor.GetStateForView(view)));
         }
     }
-
 }

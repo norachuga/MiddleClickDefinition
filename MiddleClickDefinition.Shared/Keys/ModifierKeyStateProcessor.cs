@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.Text.Editor;
 
-namespace MiddleClickDefinition
+namespace MiddleClickDefinition.Shared.Keys
 {
     internal sealed class ModifierKeyStateProcessor
     {
@@ -11,5 +11,4 @@ namespace MiddleClickDefinition
 
         internal ModifierKeyState ModifierKey { get; set; } = ModifierKeyState.None;
     }
-
 }

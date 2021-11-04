@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>596eab36-8e7d-42e3-ad24-80b3ad609028</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>MiddleClickDefinition.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Keys\GoToDefKeyProcessor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Keys\KeyboardProcessorFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Keys\ModifierKeyState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Keys\ModifierKeyStateProcessor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MiddleClickDefinitionPackage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Mouse\GoToDefMouseHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Mouse\MouseProcessorFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Options\CommandSetting.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Options\EnumTypeConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Options\OptionsPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Options\OptionsProcessor.cs" />
+  </ItemGroup>
+</Project>
