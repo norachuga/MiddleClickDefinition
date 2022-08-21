@@ -23,6 +23,8 @@ namespace MiddleClickDefinition.Shared.Options
                 if (str == CommandSettingDisplayName.PeekDefinition) return CommandSetting.PeekDefinition;
                 if (str == CommandSettingDisplayName.GoToDefinition) return CommandSetting.GoToDefinition;
                 if (str == CommandSettingDisplayName.GoToImplementation) return CommandSetting.GoToImplementation;
+                if (str == CommandSettingDisplayName.FindReferences) return CommandSetting.FindReferences;
+                if (str == CommandSettingDisplayName.FindInFiles) return CommandSetting.FindInFiles;
             }
             return base.ConvertFrom(context, culture, value);
         }
@@ -36,6 +38,8 @@ namespace MiddleClickDefinition.Shared.Options
                 else if ((int)value == 1) result = CommandSettingDisplayName.PeekDefinition;
                 else if ((int)value == 2) result = CommandSettingDisplayName.GoToDefinition;
                 else if ((int)value == 3) result = CommandSettingDisplayName.GoToImplementation;
+                else if ((int)value == 4) result = CommandSettingDisplayName.FindReferences;
+                else if ((int)value == 5) result = CommandSettingDisplayName.FindInFiles;
 
                 if (result != null) return result;
             }

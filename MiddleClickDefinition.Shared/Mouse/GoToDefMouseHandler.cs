@@ -70,8 +70,20 @@ namespace MiddleClickDefinition.Shared.Mouse
                             case ModifierKeyState.Shift:
                                 DispatchCommand(_options.ShiftMiddleClick());
                                 break;
+                            case ModifierKeyState.Alt:
+                                DispatchCommand(_options.AltMiddleClick());
+                                break;
                             case ModifierKeyState.CtrlShift:
                                 DispatchCommand(_options.CtrlShiftMiddleClick());
+                                break;
+                            case ModifierKeyState.AltShift:
+                                DispatchCommand(_options.AltShiftMiddleClick());
+                                break;
+                            case ModifierKeyState.CtrlAlt:
+                                DispatchCommand(_options.CtrlAltMiddleClick());
+                                break;
+                            case ModifierKeyState.CtrlAltShift:
+                                DispatchCommand(_options.CtrlAltShiftMiddleClick());
                                 break;
                         }
 
@@ -206,6 +218,14 @@ namespace MiddleClickDefinition.Shared.Mouse
                 case CommandSetting.GoToImplementation:
                     //Go To Implementation doesn't seem to be a part of VSConstants. Had to find it the hard way
                     ExecuteCommand(new Guid("B61E1A20-8C13-49A9-A727-A0EC091647DD"), 512);
+                    break;
+
+                case CommandSetting.FindInFiles:
+                    ExecuteCommand(VSConstants.GUID_VSStandardCommandSet97, (uint)VSConstants.VSStd97CmdID.FindInFiles);
+                    break;
+
+                case CommandSetting.FindReferences:
+                    ExecuteCommand(VSConstants.GUID_VSStandardCommandSet97, (uint)VSConstants.VSStd97CmdID.FindReferences);
                     break;
 
                 case CommandSetting.Nothing:
