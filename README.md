@@ -1,5 +1,5 @@
 # MiddleClickDefinition
-A VS extension that lets you use middleclicks to trigger Go To Definition, Go To Implementation, or Peek Definition. 
+A VS extension that lets you use middleclicks to trigger Go To Definition, Go To Implementation, Peek Definition, Find References and Find In Files.
 
 This makes navigating code feel more like a browser. I couldn't live without it!
 

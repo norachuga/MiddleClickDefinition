@@ -29,9 +29,33 @@ namespace MiddleClickDefinition.Shared.Options
         public CommandSetting ShiftMiddleClickSetting { get; set; } = CommandSetting.PeekDefinition;
 
         [Category(MiddleclickActionsCategory)]
+        [DisplayName("Alt-Middleclick")]
+        [Description("Controls which action is called for Alt-Middleclick")]
+        [TypeConverter(typeof(EnumTypeConverter))]
+        public CommandSetting AltMiddleClickSetting { get; set; } = CommandSetting.FindReferences;
+
+        [Category(MiddleclickActionsCategory)]
+        [DisplayName("Alt-Shift-Middleclick")]
+        [Description("Controls which action is called for Alt-Shift-Middleclick")]
+        [TypeConverter(typeof(EnumTypeConverter))]
+        public CommandSetting AltShiftMiddleClickSetting { get; set; } = CommandSetting.Nothing;
+
+        [Category(MiddleclickActionsCategory)]
         [DisplayName("Ctrl-Shift-Middleclick")]
         [Description("Controls which action is called for Ctrl-Shift-Middleclick")]
         [TypeConverter(typeof(EnumTypeConverter))]
-        public CommandSetting CtrlShiftMiddleClickSetting { get; set; } = CommandSetting.Nothing;
+        public CommandSetting CtrlShiftMiddleClickSetting { get; set; } = CommandSetting.FindInFiles;
+
+        [Category(MiddleclickActionsCategory)]
+        [DisplayName("Ctrl-Alt-Middleclick")]
+        [Description("Controls which action is called for Ctrl-Alt-Middleclick")]
+        [TypeConverter(typeof(EnumTypeConverter))]
+        public CommandSetting CtrlAltMiddleClickSetting { get; set; } = CommandSetting.Nothing;
+
+        [Category(MiddleclickActionsCategory)]
+        [DisplayName("Ctrl-Alt-Shift-Middleclick")]
+        [Description("Controls which action is called for Ctrl-Alt-Shift-Middleclick")]
+        [TypeConverter(typeof(EnumTypeConverter))]
+        public CommandSetting CtrlAltShiftMiddleClickSetting { get; set; } = CommandSetting.Nothing;
     }
 }

@@ -24,6 +24,18 @@ namespace MiddleClickDefinition.Shared.Options
         public CommandSetting CtrlShiftMiddleClick()
             => GetCommandSetting("CtrlShiftMiddleClickSetting");
 
+        public CommandSetting AltMiddleClick()
+            => GetCommandSetting("AltMiddleClickSetting");
+
+        public CommandSetting CtrlAltMiddleClick()
+            => GetCommandSetting("CtrlAltMiddleClickSetting");
+
+        public CommandSetting AltShiftMiddleClick()
+            => GetCommandSetting("AltShiftMiddleClickSetting");
+
+        public CommandSetting CtrlAltShiftMiddleClick()
+            => GetCommandSetting("CtrlAltShiftMiddleClickSetting");
+
         private CommandSetting GetCommandSetting(string itemName)
         {
             ThreadHelper.ThrowIfNotOnUIThread();

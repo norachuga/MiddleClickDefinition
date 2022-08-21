@@ -26,24 +26,19 @@ namespace MiddleClickDefinition.Shared.Keys
         {
             ModifierKeyState state = ModifierKeyState.None;
 
-            bool ctrlDown = (args.KeyboardDevice.Modifiers & ModifierKeys.Control) != 0;
-            bool shiftDown = (args.KeyboardDevice.Modifiers & ModifierKeys.Shift) != 0;
-
-            if (ctrlDown && shiftDown)
+            if ((args.KeyboardDevice.Modifiers & ModifierKeys.Control) != 0)
             {
-                state = ModifierKeyState.CtrlShift;
+                state |= ModifierKeyState.Ctrl;
             }
-            else
-            {
-                if (ctrlDown)
-                {
-                    state = ModifierKeyState.Ctrl;
-                }
 
-                if (shiftDown)
-                {
-                    state = ModifierKeyState.Shift;
-                }
+            if ((args.KeyboardDevice.Modifiers & ModifierKeys.Shift) != 0)
+            {
+                state |= ModifierKeyState.Shift;
+            }
+
+            if ((args.KeyboardDevice.Modifiers & ModifierKeys.Alt) != 0)
+            {
+                state |= ModifierKeyState.Alt;
             }
 
             _state.ModifierKey = state;
