@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="36a0d3d8-9977-4771-ad4f-36ae7806597b" Version="2.0.0" Language="en-US" Publisher="norachuga" />
+        <Identity Id="36a0d3d8-9977-4771-ad4f-36ae7806597b" Version="2.0.1" Language="en-US" Publisher="norachuga" />
         <DisplayName>MiddleClickDefinition 2022</DisplayName>
         <Description xml:space="preserve">Use middleclicks to trigger Go To Definition, Go To Implementation, or Peek Definition.</Description>
         <MoreInfo>https://github.com/norachuga/MiddleClickDefinition</MoreInfo>

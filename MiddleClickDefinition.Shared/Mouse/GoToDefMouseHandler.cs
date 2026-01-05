@@ -123,14 +123,14 @@ namespace MiddleClickDefinition.Shared.Mouse
                     return false;
 
                 var bufferPosition = line.GetBufferPositionFromXCoordinate(position.X);
-
                 if (!bufferPosition.HasValue)
                     return false;
 
                 var extent = _navigator.GetExtentOfWord(bufferPosition.Value);
-                if (!extent.IsSignificant)
+                if (!extent.IsSignificant || extent.Span.IsEmpty)
                     return false;
 
+                // Exclude 'using' lines for C#
                 if (_view.TextBuffer.ContentType.IsOfType("csharp"))
                 {
                     string lineText = bufferPosition.Value.GetContainingLine().GetText().Trim();
@@ -140,17 +140,23 @@ namespace MiddleClickDefinition.Shared.Mouse
 
                 foreach (var classification in _aggregator.GetClassificationSpans(extent.Span))
                 {
-                    var name = classification.ClassificationType.Classification.ToLower();
-                    if (name.Contains("identifier")
-                        || name.Contains("user types")
-                        || (name.Contains("keyword")
-                            && IsAppropriateKeyword(classification.Span.GetText())
-                            && _view.TextBuffer.ContentType.IsOfType("csharp"))
+                    var name = classification.ClassificationType.Classification.ToLowerInvariant();
+                    if (
+                        name.Contains("identifier") ||
+                        name.Contains("navigablesymbol") ||
+                        name.Contains("usertype") || // handle both "user types" and "usertype"
+                        (name.Contains("keyword") &&
+                            IsAppropriateKeyword(classification.Span.GetText()) &&
+                            _view.TextBuffer.ContentType.IsOfType("csharp"))
                         )
                     {
                         return true;
                     }
                 }
+
+                // Fallback: if the extent is significant and not whitespace, consider it significant
+                if (!string.IsNullOrWhiteSpace(extent.Span.GetText()))
+                    return true;
 
                 return false;
             }
