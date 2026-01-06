@@ -6,7 +6,9 @@ namespace MiddleClickDefinition.Shared.Options
         Nothing,
         PeekDefinition,
         GoToDefinition,
-        GoToImplementation
+        GoToImplementation,
+        FindReferences,
+        FindInFiles,
     }
 
     public static class CommandSettingDisplayName
@@ -15,5 +17,7 @@ namespace MiddleClickDefinition.Shared.Options
         public const string PeekDefinition = "Peek Definition";
         public const string GoToDefinition = "Go To Definition";
         public const string GoToImplementation = "Go To Implementation";
+        public const string FindReferences = "Find References";
+        public const string FindInFiles = "Find In Files";
     }
 }
